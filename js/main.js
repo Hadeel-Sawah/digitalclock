@@ -15,18 +15,19 @@ setInterval(() => {
     let m = new Date().getMinutes();
     let s = new Date().getSeconds();
     let am = h >= 12 ? "pm" :"am";
+    ////////
     if( h > 12){
        h = h -12;
     };
+    /////////
+    h = ( h < 10)? `0` + h :h;
+    m = ( m < 10)? `0` + m : m;
+    s = ( s < 10)? `0` + s : s;
     h >= 12 ? "pm" :"am";
     hr_time.innerHTML=`${h}:` ;
     min_time.innerHTML=`${m}:`;
     sec_time.innerHTML=`${s}`;
     am_pm .innerHTML= am;
-    
-   
-
-    
     ////////
     // 12hr on the day
     hours.style.strokeDashoffset = 510 - (510 * h) / 12;
